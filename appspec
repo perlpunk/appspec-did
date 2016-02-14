@@ -1,0 +1,6 @@
+#!/usr/bin/env ash
+export PERL5LIB=/appspeclib/App-Spec-p5/lib:/appspeclib/App-AppSpec-p5/lib
+PATH=/appspeclib/App-AppSpec-p5/bin:$PATH
+
+appspec "$@"
+
