@@ -6,13 +6,13 @@ entry:
 - name: main
   point: /appspec
   interactive: true
-  tty: true
+  tty: false
   privileged: false
   readonly: false
   rm: true
   volume: []
   env: []
 
-  run: -it
+  run: -i
     --entrypoint /appspec
     perlpunk/appspec

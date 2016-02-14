@@ -1,7 +1,7 @@
 FROM alpine:latest
 
 RUN apk update \
-  && apk add curl tar make gcc build-base perl git wget perl-yaml-xs
+  && apk add curl wget git tar make gcc build-base perl perl-yaml-xs
 
 RUN curl https://raw.githubusercontent.com/miyagawa/cpanminus/master/cpanm > cpanm \
   && chmod +x cpanm \
