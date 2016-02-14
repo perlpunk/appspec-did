@@ -1,9 +1,7 @@
 FROM alpine:latest
 
 RUN apk update \
-  && apk add curl tar make gcc build-base
-
-RUN apk add perl git openssh wget perl-yaml-xs
+  && apk add curl tar make gcc build-base perl git wget perl-yaml-xs
 
 RUN curl https://raw.githubusercontent.com/miyagawa/cpanminus/master/cpanm > cpanm \
   && chmod +x cpanm \
@@ -19,7 +17,7 @@ RUN git clone https://github.com/perlpunk/App-Spec-p5.git /appspeclib/App-Spec-p
   && git checkout completion
 
 
-RUN apk del make gcc build-base \
+RUN apk del curl tar make gcc build-base git openssh wget \
   && rm -rf /var/cache/apk/*
 
 COPY appspec /appspec
